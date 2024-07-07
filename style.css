@@ -1,0 +1,144 @@
+body, html{
+    margin: 0;
+    padding: 0; /*distancia entr cont de um elem. e suas bordas*/
+    font-family: Arial;
+    height: 100%; /*altura*/
+    box-sizing: border-box; /*para que os eleme. não passem nas suas larguras dentro dos elem. pai*/
+}
+
+body{
+    background-image: url("img/bg.webp");
+    background-position: center;
+    background-size: cover; /*para reposicionar melhor a img*/
+}
+
+.navbar{
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*alinhar os itens ao centro*/
+    padding: 10px 20px; /*preenchimento na navbar*/
+    height: 50px; /*ajuste da altura da navbar*/
+}
+
+.logo{
+    font-size: 24px;
+}
+
+.nav-links-desktop { /*aqui irei remover os estilos de listras*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links-desktop li { /*espaçamento entre eles*/
+    padding: 0 15px;
+}
+
+.nav-links-desktop a, .nav-links-mobile a { /*ajuste dos links das tags*/
+    color: #fff;
+    text-decoration: none; /*para retirar o _ dos links*/
+    transition: 0.3s; /*para fazer o rover*/
+}
+
+.nav-links-desktop a:hover {
+    color: #24c31c;
+}
+
+.mobile-menu{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+    z-index: 5;/*esse eicho X que é o fundo do menu, fica por cima do texto*/
+}
+
+.nav-links-mobile{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.2rem;
+    width: 80%;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links-mobile li {
+    border-bottom: 1px solid #787272;
+    padding-bottom: 1.2rem;
+}
+
+.hamburger, .close{
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.close{
+    margin-top: 20px;
+    margin-right: 20px;
+    display: block;
+    align-self: end;    
+}
+
+.flex{
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    html{
+        font-size: 12px;
+    }
+
+    .nav-links-desktop{
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+    }
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem; /*distãncia entre o título e o btn*/
+    height: calc(100% - 70px);/*calcula o preenchimento da barra de navegação e a altura dos elementos, fazendo com que ele fique no centro da pag. */
+}
+
+.container h1{
+    backdrop-filter: blur(10px);/*oferecer melhor visualização do texto*/
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 1px #000;/*inseri uma sombra de cor preta no texto*/
+    padding: 0.1rem 0;/*um pequen espaço entre o texto e o backdop-filter*/
+}
+
+.container button{
+    border: 1.5px solid;
+    background-color: #fff;
+    color: #298a24;
+    font-size: 1.3rem;
+    padding: 0.3rem;
+    transition: 0.4s;/*para fazer o hover*/
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container button:hover{
+    background-color: #298a24;
+    color: azure;
+}
